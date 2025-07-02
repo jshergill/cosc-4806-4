@@ -14,7 +14,7 @@ class Reminder {
     }
     public function create_reminder($subject) {
         $db = db_connect();
-        $stmt = $db->prepare("INSERT INTO reminders (user_id, subject, created_at) VALUES (6, :subject, NOW())");
+        $stmt = $db->prepare("INSERT INTO Reminders (user_id, subject, created_at) VALUES (27, :subject, NOW())");
         $stmt->bindValue(':subject', $subject);
         return $stmt->execute();
     }
