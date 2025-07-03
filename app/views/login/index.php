@@ -15,8 +15,7 @@
 												type="text" 
 												class="form-control rounded-pill px-4 py-2 border-light shadow-sm" 
 												name="username" 
-												placeholder="Enter your username"
-										>
+												placeholder="Enter your username">
 								</div>
 
 								<div class="mb-4">
@@ -26,8 +25,7 @@
 												type="password" 
 												class="form-control rounded-pill px-4 py-2 border-light shadow-sm" 
 												name="password" 
-												placeholder="Enter your password"
-										>
+												placeholder="Enter your password">
 								</div>
 
 								<div class="d-grid">
