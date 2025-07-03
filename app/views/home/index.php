@@ -1,18 +1,14 @@
 <?php require_once 'app/views/templates/header.php' ?>
-<div class="container">
-    <div class="page-header" id="banner">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Hey</h1>
-                <p class="lead"> <?= date("F jS, Y"); ?></p>
-            </div>
-        </div>
+<main class="container mt-5 mb-5" style="max-width: 700px;">
+    <div class="text-center mb-4">
+        <h1 class="fw-semibold display-5"> Hey</h1>
+        <p class="text-muted fs-5"><?= date("F jS, Y"); ?></p>
     </div>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <p> <a href="/logout">Click here to logout</a></p>
-        </div>
+    <div class="d-flex justify-content-center">
+        <a href="/logout" class="btn btn-outline-danger rounded-pill px-4 py-2 shadow-sm">
+             Logout
+        </a>
     </div>
-
-    <?php require_once 'app/views/templates/footer.php' ?>
+</main>
+<?php require_once 'app/views/templates/footer.php' ?>

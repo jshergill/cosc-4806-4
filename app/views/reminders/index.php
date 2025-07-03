@@ -2,7 +2,7 @@
 
 <main role="main" class="container mt-5 mb-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="fw-semibold">📝 Reminders</h2>
+        <h2 class="fw-semibold"> Reminders</h2>
         <a href="/reminders/create" class="btn btn-dark rounded-pill px-4">+ Add Reminder</a>
     </div>
 
