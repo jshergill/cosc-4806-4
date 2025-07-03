@@ -5,7 +5,7 @@ class Reminder {
     public function __construct() {}
 
 
-    public function get_all_reminders() {
+    public function all_reminders() {
         $db = db_connect();
         $statement = $db->prepare("SELECT * FROM Reminders;");
         $statement->execute();
@@ -18,21 +18,21 @@ class Reminder {
         $stmt->bindValue(':subject', $subject);
         return $stmt->execute();
     }
-    public function get_reminder_by_id($id) {
+    public function reminder_by_id($id) {
         $db = db_connect();
         $stmt = $db->prepare("SELECT * FROM reminders WHERE id = :id AND user_id = 27");
         $stmt->bindValue(':id', $id);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-    public function update_reminders($id, $subject) {
+    public function update_reminder($id, $subject) {
         $db = db_connect();
         $stmt = $db->prepare("UPDATE Reminders SET subject = :subject WHERE id = :id AND user_id = 27");
         $stmt->bindValue(':subject', $subject);
         $stmt->bindValue(':id', $id);
         return $stmt->execute();
     }
-    public function delete_reminders($id) {
+    public function delete_reminder($id) {
         $db = db_connect();
         $stmt = $db->prepare("DELETE FROM reminders WHERE id = :id AND user_id = 27");
         $stmt->bindValue(':id', $id);

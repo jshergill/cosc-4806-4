@@ -39,8 +39,6 @@ class Reminders extends Controller {
                 $reminder->delete_reminders($id);
                 header('Location: /reminders');
                 exit;
-            } else {
-                echo 'Invalid request method.';
             }
         }
 }

@@ -2,7 +2,7 @@
 
 <main class="container mt-5 mb-5" style="max-width: 600px;">
     <div class="text-center mb-4">
-        <h2 class="fw-semibold">➕ New Reminder</h2>
+        <h2 class="fw-semibold">New Reminder</h2>
         <p class="text-muted">Keep your thoughts organized and on time.</p>
     </div>
 

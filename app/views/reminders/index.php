@@ -28,7 +28,7 @@
                             </td>
                             <td class="text-muted"><?= htmlspecialchars($reminder['created_at']) ?></td>
                             <td class="text-center">
-                                <a href="/reminders/edit/<?= $reminder['id'] ?>" class="btn btn-outline-secondary btn-sm rounded-pill me-2 px-3">Edit</a>
+                                <a href="/reminders/update/<?= $reminder['id'] ?>" class="btn btn-outline-secondary btn-sm rounded-pill me-2 px-3">Update</a>
 
                                 <form method="post" action="/reminders/delete/<?= $reminder['id'] ?>" class="d-inline">
                                     <button type="submit" class="btn btn-outline-danger btn-sm rounded-pill px-3">Delete</button>
@@ -41,7 +41,7 @@
         </div>
     <?php else: ?>
         <div class="alert alert-info text-center mt-5" role="alert">
-            No reminders yet. Click <strong>+ New Reminder</strong> to get started!
+            No reminders yet. Click <strong>Add New Reminder</strong> to get started!
         </div>
     <?php endif; ?>
 </main>

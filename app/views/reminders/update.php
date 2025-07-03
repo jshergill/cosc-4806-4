@@ -6,7 +6,7 @@
         <p class="text-muted">Update your reminder below and keep things on track.</p>
     </div>
 
-    <form method="post" action="/reminders/edit/<?= $data['reminder']['id'] ?>" class="p-4 shadow-sm rounded-4 bg-white border">
+    <form method="post" action="/reminders/update/<?= $data['reminder']['id'] ?>" class="p-4 shadow-sm rounded-4 bg-white border">
         <div class="mb-4">
             <label for="subject" class="form-label fw-medium">Reminder Subject</label>
             <input 
