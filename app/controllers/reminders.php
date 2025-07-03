@@ -4,7 +4,7 @@ class Reminders extends Controller {
 
     public function index() {
         $reminder = $this->model('Reminder');
-        $list_of_reminders = $reminder->get_all_reminders();
+        $list_of_reminders = $reminder->all_reminders();
         $this->view('reminders/index', ['reminders' => $list_of_reminders]);
     }
 
@@ -20,25 +20,31 @@ class Reminders extends Controller {
 
         $this->view('reminders/create');
     }
-    public function update($id) {
+    public function update($ID) {
         $reminder = $this->model('Reminder');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $subject = $_POST['subject'];
-            $reminder->update_reminders($id, $subject);
+            $reminder->update_reminder($ID, $subject);
             header('Location: /reminders');
             exit;
         }
 
-        $data = $reminder->get_reminder_by_id($id);
-        $this->view('reminders/update', ['reminder' => $data]);
+        // Fetch the reminder and pass it to the view
+        $reminderData = $reminder->reminder_by_id($ID);
+        $this->view('reminders/edit', ['reminder' => $reminderData]);
     }
-      public function delete($id) {
-            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                $reminder = $this->model('Reminder');
-                $reminder->delete_reminders($id);
-                header('Location: /reminders');
-                exit;
-            }
-        }
+
+
+     public function delete($ID) {
+         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+             $reminder = $this->model('Reminder');
+             $reminder->delete_reminder($ID);
+             header('Location: /reminders');
+             exit;
+         } else {
+             die('Invalid request method');
+         }
+     }
+
 }

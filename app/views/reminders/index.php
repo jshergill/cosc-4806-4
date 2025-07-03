@@ -20,7 +20,8 @@
                 <tbody>
                     <?php foreach ($data['reminders'] as $index => $reminder): ?>
                         <tr class="<?= $reminder['completed'] ? 'table-success bg-light' : '' ?>">
-                            <td class="text-secondary"><?= $index + 1 ?></td>
+                            <td class="text-secondary"><?= htmlspecialchars($reminder['id']) ?></td>
+
                             <td>
                                 <?= $reminder['completed'] 
                                     ? '<span class="text-muted"><del>' . htmlspecialchars($reminder['subject']) . '</del></span>' 
@@ -29,6 +30,7 @@
                             <td class="text-muted"><?= htmlspecialchars($reminder['created_at']) ?></td>
                             <td class="text-center">
                                 <a href="/reminders/update/<?= $reminder['id'] ?>" class="btn btn-outline-secondary btn-sm rounded-pill me-2 px-3">Update</a>
+
 
                                 <form method="post" action="/reminders/delete/<?= $reminder['id'] ?>" class="d-inline">
                                     <button type="submit" class="btn btn-outline-danger btn-sm rounded-pill px-3">Delete</button>
