@@ -20,7 +20,7 @@ class Reminders extends Controller {
 
         $this->view('reminders/create');
     }
-    public function edit($id) {
+    public function update($id) {
         $reminder = $this->model('Reminder');
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -31,7 +31,7 @@ class Reminders extends Controller {
         }
 
         $data = $reminder->get_reminder_by_id($id);
-        $this->view('reminders/edit', ['reminder' => $data]);
+        $this->view('reminders/update', ['reminder' => $data]);
     }
       public function delete($id) {
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
