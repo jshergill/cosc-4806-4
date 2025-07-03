@@ -33,4 +33,14 @@ class Reminders extends Controller {
         $data = $reminder->get_reminder_by_id($id);
         $this->view('reminders/edit', ['reminder' => $data]);
     }
+      public function delete($id) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $reminder = $this->model('Reminder');
+                $reminder->delete_reminders($id);
+                header('Location: /reminders');
+                exit;
+            } else {
+                echo 'Invalid request method.';
+            }
+        }
 }

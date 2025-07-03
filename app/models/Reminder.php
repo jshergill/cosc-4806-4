@@ -32,4 +32,10 @@ class Reminder {
         $stmt->bindValue(':id', $id);
         return $stmt->execute();
     }
+    public function delete_reminders($id) {
+        $db = db_connect();
+        $stmt = $db->prepare("DELETE FROM reminders WHERE id = :id AND user_id = 6");
+        $stmt->bindValue(':id', $id);
+        return $stmt->execute();
+    }
 }
